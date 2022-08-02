@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Count Down</title>
+	<link rel="stylesheet" type="text/css" href="style\count.css">
+</head>
+
+<body>
+	<p id="hrs"></p>
+	<p id="min"></p>
+	<p id="sec"></p>
+	<p id="sit">Situation :-<span id="din"> Paused!</span></p>
+	<p id="us">Patrick & Felix</p>
+
+	<form>
+		<input type="button" value="Play" id="start" title="Play"
+			onmouseout="document.getElementById('start').style.transition  = 0.5 + 's'" onclick="sam();" />
+		<input type="button" value="Pause" id="pause" title="Pause"
+			onmouseout="document.getElementById('pause').style.transition  = 0.5 + 's'" onclick="sam();" />
+		<a href="Count Down.html" title="Resert"><input type="button" value="Resert" id="res"
+				onmouseout="document.getElementById('res').style.transition  = 0.5 + 's'" /></a>
+	</form>
+
+	<embed src="sound\alarm.wav" id="win"></embed>
+
+	<script type="text/javascript">
+
+		var hrs = prompt("How Many Hours?", "");
+		var min = prompt("How Many Minutes?", "");
+		var sec = prompt("How Many Seconds?", "");
+		var big = -1;
+		var die = document.getElementById('start');
+		var live = document.getElementById('pause');
+		var vin = document.getElementById("din");
+		var sing = document.getElementById("win");
+
+		document.getElementById("hrs").innerHTML = hrs + " Hours";
+		document.getElementById("min").innerHTML = min + " Minutes";
+		document.getElementById("sec").innerHTML = sec + " Seconds";
+
+
+		function sam() {
+
+			if (big == -1) {
+
+				die.style.display = 'none';
+				live.style.display = 'block';
+				vin.innerHTML = " Played!"
+
+				big = setInterval(function run() {
+
+
+					if ((sec < 1) && (min > 0)) {
+
+						//sec = 0;
+						min--;
+						sec += 60;
+						document.getElementById("min").innerHTML = min + " Minutes";
+						document.getElementById("sec").innerHTML = sec + " Seconds";
+
+					}
+
+					if ((min < 1) && (hrs > 0) && (sec < 1)) {
+
+						hrs--;
+
+						min += 60;
+
+						document.getElementById("min").innerHTML = min + " Minutes";
+
+						min--;
+
+						document.getElementById("min").innerHTML = min + " Minutes";
+
+						sec += 60;
+
+						document.getElementById("hrs").innerHTML = hrs + " Hours";
+
+						document.getElementById("sec").innerHTML = sec + " Seconds";
+					}
+
+					sec--;
+					document.getElementById("sec").innerHTML = sec + " Seconds";
+
+
+					if ((hrs == "") || (hrs < 0)) {
+						hrs = 0;
+					}
+
+					if ((hrs == 0) && (min == 0) && (sec < 0)) {
+
+						clearInterval(big);
+
+						hrs = 0;
+						min = 0;
+						sec = 0;
+
+						document.getElementById("sec").innerHTML = sec + " Seconds";
+
+						live.style.display = 'none';
+
+						sing.style.display = 'block';
+
+						vin.innerHTML = " Time Is Up!"
+
+					}
+
+					if ((hrs == 0) && (min == 0)) {
+						hrs = 0;
+						min = 0;
+					}
+					document.getElementById("hrs").innerHTML = hrs + " Hours";
+
+					if (min < 0) {
+
+						min += 1;
+
+					}
+
+					if ((hrs != 0) && (min == 0) && (sec == 0)) {
+						hrs--;
+						min += 60;
+
+						document.getElementById("min").innerHTML = min + " Minutes";
+
+						document.getElementById("hrs").innerHTML = hrs + " Hours";
+						sec += 60;
+						document.getElementById("sec").innerHTML = sec + " Seconds";
+						sec--;
+						document.getElementById("sec").innerHTML = sec + " Seconds";
+
+					}
+				}, 1000);
+			} else {
+
+				live.style.display = 'none';
+				die.style.display = 'block';
+				vin.innerHTML = " Paused!"
+
+				clearInterval(big);
+
+				big = -1;
+
+			}
+		}
+
+	</script>
+</body>
+
+</html>

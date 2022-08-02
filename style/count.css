@@ -1,0 +1,122 @@
+body{
+	background-color: black;
+}
+#hrs{
+	font-family: Segoe Print;
+	font-size: 100px;
+	position: absolute;
+	top: 15%;
+	left: 27%;
+	transition: 1s;
+	color: grey;
+}
+#min{
+	font-family: Segoe Print;
+	font-size: 50px;
+	position: absolute;
+	top: 43%;
+	left: 35%;
+	transition: 1s;
+	color: grey;
+}
+#sec{
+	font-family: Segoe Print;
+	font-size: 25px;
+	position: absolute;
+	top: 59%;
+	left: 57%;
+	transition: 1s;
+	color: grey;
+}
+#start{
+	font-family: Segoe UI Black ;
+	font-size: 30px;
+	color: grey;
+	border: 1px solid grey;
+	border-radius: 10px;
+	background-color: black;
+	padding: 10px;
+	position: absolute;
+	top: 75%;
+	left: 47%;
+}
+#start:hover{
+	color: white;
+	font-size:33px;
+	padding: 13px;
+	position: absolute;
+	top: 74.5%;
+	border-color: white;
+	transition: 0.5s;
+
+}
+#pause{  
+	font-family: Segoe UI Black;
+	font-size: 30px;
+	color: grey;
+	border: 1px solid grey;
+	border-radius: 10px;
+	background-color: black;
+	padding: 10px;
+	position: absolute;
+	top: 75%;
+	left: 47%;
+	display: none;
+}
+#pause:hover{
+	color: white;
+	font-size:33px;
+	padding: 13px;
+	position: absolute;
+	top: 74.5%;
+	border-color: white;
+	transition: 0.5s;
+
+}
+#res{
+	font-family: Segoe UI Black;
+	font-size: 30px;
+	color: grey;
+	border: 1px solid grey;
+	border-radius: 10px;
+	background-color: black;
+	padding: 10px;
+	position: absolute;
+	top: 10%;
+	left: 80%;
+}
+#res:hover{
+	color: white;
+	font-size:33px;
+	padding: 13px;
+	position: absolute;
+	top: 9.5%;
+	border-color: white;
+	transition: 0.5s;
+
+}
+#sit{
+	color: grey;
+	font-family: Segoe Print;
+	font-size: 20px;
+	position: absolute;
+	top: 10%;
+	left: 5%;	
+}
+#din{
+	color: white;
+}
+#us{
+	font-family: Sitka Text;
+	color: grey;
+	font-size: 30px;
+	position: absolute;
+	top: 75%;
+	left: 7.5%;
+}
+#win{
+	display: none;
+	position: absolute;
+	top: 68%;
+	left: 39%;
+}
